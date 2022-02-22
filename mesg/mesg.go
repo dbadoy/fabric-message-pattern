@@ -21,11 +21,6 @@ type Request interface {
 	Get() interface{}
 }
 
-func Response(obj interface{}) sc.Response {
-	b, _ := json.Marshal(obj)
-	return shim.Success(b)
-}
-
 func Initial() map[string]FuncWrap {
 	fwm := make(map[string]FuncWrap)
 

@@ -16,6 +16,5 @@ func (c CommonRequest) Get() interface{} {
 }
 
 func (c CommonRequest) FieldCount() int {
-	v := reflect.ValueOf(c)
-	return v.NumField()
+	return reflect.ValueOf(c).NumField()
 }

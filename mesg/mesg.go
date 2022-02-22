@@ -13,7 +13,7 @@ type FuncWrap struct {
 	Proceed Function
 }
 
-type Function func(stub shim.ChaincodeStubInterface, request Request) sc.Response
+type Function func(APIstub shim.ChaincodeStubInterface, request Request) sc.Response
 
 type Request interface {
 	FieldCount() int

@@ -52,7 +52,7 @@ func CreateCar(APIstub shim.ChaincodeStubInterface, request Request) sc.Response
 	var car = Car{Make: request.Make, Model: request.Model, Colour: request.Colour, Owner: request.Owner}
 
 	carAsBytes, _ := json.Marshal(car)
-	APIstub.PutState(args[0], carAsBytes)
+	APIstub.PutState(request.CarID, carAsBytes)
 
 	return shim.Success(nil)
 }

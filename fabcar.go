@@ -30,7 +30,7 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return shim.Error(err)
 	}
 
-	return m.Proceed(stub, m.param)
+	return m.Proceed(APIstub, m.param)
 }
 
 func main() {

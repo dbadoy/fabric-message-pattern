@@ -11,6 +11,7 @@ type QueryCarRequest struct {
 
 type CreateCarRequest struct {
 	CommonRequest
+	CarID  string
 	Make   string
 	Model  string
 	Colour string

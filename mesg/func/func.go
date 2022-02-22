@@ -22,7 +22,7 @@ func QueryCar(APIstub shim.ChaincodeStubInterface, request Request) sc.Response 
 	return shim.Success(carAsBytes)
 }
 
-func InitLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
+func InitLedger(APIstub shim.ChaincodeStubInterface, request Request) sc.Response {
 	cars := []Car{
 		Car{Make: "Toyota", Model: "Prius", Colour: "blue", Owner: "Tomoko"},
 		Car{Make: "Ford", Model: "Mustang", Colour: "red", Owner: "Brad"},
@@ -57,7 +57,7 @@ func CreateCar(APIstub shim.ChaincodeStubInterface, request Request) sc.Response
 	return shim.Success(nil)
 }
 
-func QueryAllCars(APIstub shim.ChaincodeStubInterface) sc.Response {
+func QueryAllCars(APIstub shim.ChaincodeStubInterface, request Request) sc.Response {
 	startKey := "CAR0"
 	endKey := "CAR999"
 

@@ -20,7 +20,7 @@ func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
 func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response {
 	function, args := APIstub.GetFunctionAndParameters()
 
-	m, exist := s.fwm[fname]
+	m, exist := s.fwm[function]
 	if !exist {
 		return shim.Error("Invalid Smart Contract function name.")
 	}

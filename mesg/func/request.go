@@ -47,10 +47,11 @@ func (c *CreateCarRequest) Set(args []string) error {
 		return ErrInvalidArgment
 	}
 
-	c.Make = args[0]
-	c.Model = args[1]
-	c.Colour = args[2]
-	c.Owner = args[3]
+	c.CarID = args[0]
+	c.Make = args[1]
+	c.Model = args[2]
+	c.Colour = args[3]
+	c.Owner = args[4]
 
 	return nil
 }

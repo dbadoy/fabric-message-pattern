@@ -25,12 +25,12 @@ func Initial() map[string]FuncWrap {
 	fwm := make(map[string]FuncWrap)
 
 	var fwl []FuncWrap
-	fwl = append(fwl, FuncWrapper("queryCar", &QueryCarRequest{}, QueryCar)
-	fwl = append(fwl, FuncWrapper("createCar", &CreateCarRequest{}, CreateCar)
-	fwl = append(fwl, FuncWrapper("changeCarOwner", &ChangeCarOwnerRequest{}, ChangeCarOwner)	
+	fwl = append(fwl, funcWrapper("queryCar", &QueryCarRequest{}, QueryCar)
+	fwl = append(fwl, funcWrapper("createCar", &CreateCarRequest{}, CreateCar)
+	fwl = append(fwl, funcWrapper("changeCarOwner", &ChangeCarOwnerRequest{}, ChangeCarOwner)
 
-	fwl = append(fwl, FuncWrapper("initLedger", &NonParamRequest{}, InitLedger))
-	fwl = append(fwl, FuncWrapper("queryAllCars", &NonParamRequest{}, QueryAllCars))
+	fwl = append(fwl, funcWrapper("initLedger", &NonParamRequest{}, InitLedger))
+	fwl = append(fwl, funcWrapper("queryAllCars", &NonParamRequest{}, QueryAllCars))
 
 	for _, fw := range fl {
 		fwm[fw.fname] = fw
@@ -39,7 +39,7 @@ func Initial() map[string]FuncWrap {
 	return fwm
 }
 
-func FuncWrapper(fname string, param interface{}, f Function) FuncWrap {
+func funcWrapper(fname string, param interface{}, f Function) FuncWrap {
 	return FuncWrap{
 		fname   : fname,
 		param   : param,

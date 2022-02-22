@@ -52,6 +52,11 @@ func (c *CreateCarRequest) Set(args []string) error {
 	c.Model = args[2]
 	c.Colour = args[3]
 	c.Owner = args[4]
+	
+	// Same...
+	// for i, v := range args {
+	// 	reflect.ValueOf(c).Elem().Field(i).SetString(v)
+	// }
 
 	return nil
 }

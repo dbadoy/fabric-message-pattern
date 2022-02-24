@@ -5,11 +5,11 @@ import (
 	"reflect"
 )
 
-type CommonRequest struct{}
-
 var (
 	ErrInvalidArgment = errors.New("invalid arguments.")
 )
+
+type CommonRequest struct{}
 
 func (c CommonRequest) Get() interface{} {
 	return c
